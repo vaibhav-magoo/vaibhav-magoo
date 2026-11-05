@@ -1,65 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 104" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 126" width="100%" height="100%">
   <defs>
     <linearGradient id="footCore" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0D0D11" />
-      <stop offset="50%" stop-color="#08080B" />
-      <stop offset="100%" stop-color="#0D0D11" />
+      <stop offset="0%" stop-color="#09090B" />
+      <stop offset="50%" stop-color="#040406" />
+      <stop offset="100%" stop-color="#09090B" />
     </linearGradient>
 
     <linearGradient id="footRim" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
-      <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.18" />
-      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.3" />
-      <stop offset="65%" stop-color="#FFFFFF" stop-opacity="0.18" />
+      <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.22" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.38" />
+      <stop offset="65%" stop-color="#FFFFFF" stop-opacity="0.22" />
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
     </linearGradient>
   </defs>
 
   <style>
-    .display {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Geist', 'Plus Jakarta Sans', sans-serif;
+    .sans {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Geist', 'Inter', sans-serif;
+    }
+    .serif {
+      font-family: 'Playfair Display', 'PP Editorial New', 'Instrument Serif', Georgia, serif;
     }
     .mono {
       font-family: 'SF Mono', 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
     }
-    @keyframes pulseBeacon {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
+    @keyframes starRotate {
+      0%, 100% { transform: scale(1); opacity: 0.95; }
+      50% { transform: scale(0.75); opacity: 0.4; }
     }
-    .beacon { animation: pulseBeacon 2.8s cubic-bezier(0.32, 0.72, 0, 1) infinite; }
+    .star {
+      transform-origin: 600px 63px;
+      animation: starRotate 3.6s ease-in-out infinite;
+    }
     @media (prefers-reduced-motion: reduce) {
-      .beacon { animation: none !important; }
+      .star { animation: none !important; }
     }
   </style>
 
   <!-- Double-Bezel Outer Shell -->
-  <rect x="1" y="1" width="1198" height="102" rx="26" fill="#050507" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+  <rect x="1" y="1" width="1198" height="124" rx="26" fill="#020203" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1" />
   <!-- Double-Bezel Inner Core -->
-  <rect x="7" y="7" width="1186" height="90" rx="20" fill="url(#footCore)" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1" />
-  <line x1="120" y1="7.5" x2="1080" y2="7.5" stroke="url(#footRim)" stroke-width="1" />
+  <rect x="7" y="7" width="1186" height="112" rx="20" fill="url(#footCore)" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1" />
+  <line x1="140" y1="7.5" x2="1060" y2="7.5" stroke="url(#footRim)" stroke-width="1" />
 
-  <!-- Left Identity & Philosophy -->
-  <g transform="translate(36, 44)">
-    <circle cx="8" cy="-4" r="4" fill="#10B981" class="beacon" />
-    <text x="24" y="0" fill="#F4F4F5" font-size="14" font-weight="600" letter-spacing="-0.2" class="display">
-      Vaibhav Magoo
-    </text>
-    <text x="136" y="0" fill="#52525B" font-size="13" class="mono">/</text>
-    <text x="152" y="0" fill="#A1A1AA" font-size="13.5" class="display">
-      Available for architectural discussions, product engineering &amp; technical collaborations.
-    </text>
-    <text x="24" y="24" fill="#71717A" font-size="11.5" class="mono">
-      Engineered with precision · Respects prefers-reduced-motion
-    </text>
-  </g>
+  <!-- Top Hairline Rule -->
+  <line x1="340" y1="32" x2="860" y2="32" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="0.8" />
 
-  <!-- Right "Button-in-Button" Island CTA -->
-  <g transform="translate(972, 32)">
-    <rect x="0" y="0" width="188" height="40" rx="20" fill="#16161D" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1" />
-    <text x="22" y="24.5" fill="#F4F4F5" font-size="12.5" font-weight="500" class="display">
-      unistack.cc
-    </text>
-    <circle cx="164" cy="20" r="14" fill="#FFFFFF" fill-opacity="0.08" />
-    <path d="M 160 24 L 168 16 M 162 16 L 168 16 L 168 22" fill="none" stroke="#F4F4F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-  </g>
+  <!-- Left Filigree Flourish (Reference 3 Homage) -->
+  <path d="M 270 63 C 288 53, 304 73, 322 63 C 332 57, 342 63, 350 63" fill="none" stroke="#A1A1AA" stroke-opacity="0.55" stroke-width="1.1" stroke-linecap="round" />
+  <circle cx="266" cy="63" r="1.8" fill="#A1A1AA" fill-opacity="0.6" />
+
+  <!-- Center Spaced Colophon Typography -->
+  <text x="455" y="67" text-anchor="middle" fill="#D4D4D8" font-size="12" letter-spacing="3.2" class="serif">
+    vaibhav magoo
+  </text>
+
+  <text x="546" y="67" text-anchor="middle" fill="#52525B" font-size="12" class="mono">/</text>
+
+  <!-- 4-Point Star Ornament -->
+  <path d="M 600 56 Q 600 63 607 63 Q 600 63 600 70 Q 600 63 593 63 Q 600 63 600 56 Z" fill="#FFFFFF" class="star" />
+
+  <text x="654" y="67" text-anchor="middle" fill="#52525B" font-size="12" class="mono">/</text>
+
+  <text x="752" y="67" text-anchor="middle" fill="#D4D4D8" font-size="11.5" letter-spacing="2.8" class="mono">
+    unistack.cc · ist
+  </text>
+
+  <!-- Right Filigree Flourish -->
+  <path d="M 850 63 C 858 63, 868 57, 878 63 C 896 73, 912 53, 930 63" fill="none" stroke="#A1A1AA" stroke-opacity="0.55" stroke-width="1.1" stroke-linecap="round" />
+  <circle cx="934" cy="63" r="1.8" fill="#A1A1AA" fill-opacity="0.6" />
+
+  <!-- Bottom Hairline Rule -->
+  <line x1="340" y1="94" x2="860" y2="94" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="0.8" />
 </svg>
