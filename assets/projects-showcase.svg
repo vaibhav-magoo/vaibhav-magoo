@@ -1,290 +1,257 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" width="100%" height="100%">
   <defs>
-    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B1120" />
-      <stop offset="100%" stop-color="#070B14" />
+    <!-- Inner Surface Gradients -->
+    <linearGradient id="bentoCore" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111115" />
+      <stop offset="100%" stop-color="#09090C" />
     </linearGradient>
 
-    <linearGradient id="cyanBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.85" />
-      <stop offset="50%" stop-color="#1E293B" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.85" />
+    <linearGradient id="bentoHeroCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#13151C" />
+      <stop offset="60%" stop-color="#0B0C10" />
+      <stop offset="100%" stop-color="#08090C" />
     </linearGradient>
 
-    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.85" />
-      <stop offset="50%" stop-color="#1E293B" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.85" />
+    <!-- Specular Rim Gradient -->
+    <linearGradient id="rimLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.16" />
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.02" />
     </linearGradient>
 
-    <linearGradient id="purpleBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.85" />
-      <stop offset="50%" stop-color="#1E293B" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.85" />
-    </linearGradient>
+    <radialGradient id="cyanSpot" cx="85%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
 
-    <linearGradient id="greenBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10B981" stop-opacity="0.85" />
-      <stop offset="50%" stop-color="#1E293B" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.85" />
-    </linearGradient>
-
-    <filter id="cardGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="20" result="blur" />
-    </filter>
+    <radialGradient id="amberSpot" cx="88%" cy="22%" r="55%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.09" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
   </defs>
 
   <style>
-    .sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
-
-    @keyframes pulseBar1 {
-      0%, 100% { height: 10px; y: 15px; }
-      50% { height: 28px; y: 6px; }
+    .display {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Geist', 'Plus Jakarta Sans', sans-serif;
     }
-    @keyframes pulseBar2 {
-      0%, 100% { height: 24px; y: 8px; }
-      50% { height: 8px; y: 16px; }
-    }
-    @keyframes pulseBar3 {
-      0%, 100% { height: 14px; y: 13px; }
-      50% { height: 32px; y: 4px; }
-    }
-    @keyframes floatCard1 {
-      0%, 100% { transform: translate(0px, 0px); }
-      50% { transform: translate(0px, -4px); }
-    }
-    @keyframes floatCard2 {
-      0%, 100% { transform: translate(612px, 0px); }
-      50% { transform: translate(612px, -4px); }
-    }
-    @keyframes floatCard3 {
-      0%, 100% { transform: translate(0px, 232px); }
-      50% { transform: translate(0px, 228px); }
-    }
-    @keyframes floatCard4 {
-      0%, 100% { transform: translate(612px, 232px); }
-      50% { transform: translate(612px, 228px); }
-    }
-    @keyframes dataFlow {
-      to { stroke-dashoffset: -120; }
+    .mono {
+      font-family: 'SF Mono', 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
     }
 
-    .c1 { animation: floatCard1 6s ease-in-out infinite; }
-    .c2 { animation: floatCard2 6.5s ease-in-out infinite; }
-    .c3 { animation: floatCard3 7s ease-in-out infinite; }
-    .c4 { animation: floatCard4 5.8s ease-in-out infinite; }
+    @keyframes pulseLive {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+    @keyframes eqBar1 {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1); }
+    }
+    @keyframes eqBar2 {
+      0%, 100% { transform: scaleY(0.95); }
+      50% { transform: scaleY(0.35); }
+    }
+    @keyframes eqBar3 {
+      0%, 100% { transform: scaleY(0.65); }
+      50% { transform: scaleY(0.9); }
+    }
+    @keyframes slidePreview {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
 
-    .bar-a { animation: pulseBar1 1.2s ease-in-out infinite; }
-    .bar-b { animation: pulseBar2 0.9s ease-in-out infinite; }
-    .bar-c { animation: pulseBar3 1.4s ease-in-out infinite; }
-    .stream-line { stroke-dasharray: 6 10; animation: dataFlow 4s linear infinite; }
+    .live-dot { animation: pulseLive 2.6s cubic-bezier(0.32, 0.72, 0, 1) infinite; }
+    .eq1 { transform-origin: center 14px; animation: eqBar1 1.5s cubic-bezier(0.32, 0.72, 0, 1) infinite; }
+    .eq2 { transform-origin: center 14px; animation: eqBar2 1.2s cubic-bezier(0.32, 0.72, 0, 1) infinite; }
+    .eq3 { transform-origin: center 14px; animation: eqBar3 1.7s cubic-bezier(0.32, 0.72, 0, 1) infinite; }
+    .float-ui { animation: slidePreview 6.5s cubic-bezier(0.32, 0.72, 0, 1) infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .live-dot, .eq1, .eq2, .eq3, .float-ui { animation: none !important; }
+    }
   </style>
 
-  <!-- ==================== CARD 1: UNISTACK ==================== -->
-  <g class="c1" transform="translate(0, 0)">
-    <rect x="4" y="6" width="580" height="210" rx="16" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.6" />
-    <circle cx="510" cy="50" r="55" fill="#06B6D4" opacity="0.09" filter="url(#cardGlow)" />
+  <!-- ==================== 1. ASYMMETRICAL HERO BENTO (COL-SPAN-7): UNISTACK.CC ==================== -->
+  <g transform="translate(0, 0)">
+    <!-- Outer Bezel Shell -->
+    <rect x="1" y="1" width="696" height="310" rx="26" fill="#050507" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+    <!-- Inner Core -->
+    <rect x="8" y="8" width="682" height="296" rx="20" fill="url(#bentoHeroCore)" stroke="url(#rimLight)" stroke-width="1" />
+    <rect x="8" y="8" width="682" height="296" rx="20" fill="url(#cyanSpot)" />
+    <line x1="48" y1="8.5" x2="420" y2="8.5" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1" />
 
-    <!-- Header Pill -->
-    <rect x="28" y="26" width="136" height="24" rx="12" fill="#083344" stroke="#06B6D4" stroke-width="1" />
-    <circle cx="42" cy="38" r="4" fill="#22D3EE">
-      <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite" />
-    </circle>
-    <text x="54" y="42" fill="#67E8F9" font-size="10.5" font-weight="700" class="mono">LIVE PLATFORM</text>
-    <text x="455" y="42" fill="#38BDF8" font-size="11.5" font-weight="600" class="mono">unistack.cc ↗</text>
+    <!-- Eyebrow Header -->
+    <g transform="translate(36, 34)">
+      <rect x="0" y="0" width="142" height="24" rx="12" fill="#12141C" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1" />
+      <circle cx="14" cy="12" r="3.5" fill="#38BDF8" class="live-dot" />
+      <text x="26" y="16" fill="#E4E4E7" font-size="10" font-weight="600" letter-spacing="1.4" class="mono">FLAGSHIP · LIVE</text>
 
-    <!-- Title & Desc -->
-    <text x="28" y="82" fill="#F8FAFC" font-size="22" font-weight="800" class="sans">UniStack — Campus Operating System</text>
-    <text x="28" y="108" fill="#94A3B8" font-size="13.5" class="sans">Unified ecosystem for student utilities &amp; club operations: cab sharing,</text>
-    <text x="28" y="128" fill="#94A3B8" font-size="13.5" class="sans">event discovery, QR passes, academic calendars, forms &amp; org management.</text>
-
-    <!-- Animated Node Graph Indicator -->
-    <g transform="translate(465, 145)">
-      <line x1="0" y1="20" x2="40" y2="8" stroke="#38BDF8" stroke-width="1.5" class="stream-line" />
-      <line x1="40" y1="8" x2="82" y2="24" stroke="#38BDF8" stroke-width="1.5" class="stream-line" />
-      <circle cx="0" cy="20" r="4" fill="#06B6D4" />
-      <circle cx="40" cy="8" r="5" fill="#38BDF8" />
-      <circle cx="82" cy="24" r="4" fill="#60A5FA" />
+      <text x="536" y="16" fill="#71717A" font-size="11.5" font-weight="500" class="mono">unistack.cc</text>
+      <circle cx="614" cy="12" r="12" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1" />
+      <path d="M 610 16 L 618 8 M 612 8 L 618 8 L 618 14" fill="none" stroke="#F4F4F5" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
     </g>
 
-    <!-- Tech Pills -->
-    <g transform="translate(28, 162)" class="mono" font-size="11" font-weight="600">
-      <rect x="0" y="0" width="84" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="42" y="17" text-anchor="middle" fill="#38BDF8">Full-Stack</text>
-
-      <rect x="94" y="0" width="90" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="139" y="17" text-anchor="middle" fill="#38BDF8">QR Passes</text>
-
-      <rect x="194" y="0" width="106" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="247" y="17" text-anchor="middle" fill="#38BDF8">Multi-Tenant</text>
-
-      <rect x="310" y="0" width="96" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="358" y="17" text-anchor="middle" fill="#38BDF8">Real-Time</text>
-    </g>
-  </g>
-
-  <!-- ==================== CARD 2: VERITY DESKTOP ==================== -->
-  <g class="c2" transform="translate(612, 0)">
-    <rect x="4" y="6" width="580" height="210" rx="16" fill="url(#cardBg)" stroke="url(#goldBorder)" stroke-width="1.6" />
-    <circle cx="510" cy="50" r="55" fill="#F59E0B" opacity="0.09" filter="url(#cardGlow)" />
-
-    <!-- Header Pill -->
-    <rect x="28" y="26" width="154" height="24" rx="12" fill="#451A03" stroke="#F59E0B" stroke-width="1" />
-    <circle cx="42" cy="38" r="4" fill="#FBBF24">
-      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
-    </circle>
-    <text x="54" y="42" fill="#FDE68A" font-size="10.5" font-weight="700" class="mono">3D AI COMPANION</text>
-    <text x="415" y="42" fill="#FBBF24" font-size="11.5" font-weight="600" class="mono">700+ Expressions</text>
-
-    <!-- Title & Desc -->
-    <text x="28" y="82" fill="#F8FAFC" font-size="22" font-weight="800" class="sans">Verity Desktop — Expressive 3D Avatar</text>
-    <text x="28" y="108" fill="#94A3B8" font-size="13.5" class="sans">Living desktop companion for AI voice, conversations &amp; agent telemetry.</text>
-    <text x="28" y="128" fill="#94A3B8" font-size="13.5" class="sans">Features a hands-on 3D motion studio &amp; Hermes Gateway integration.</text>
-
-    <!-- Animated Emotion/Audio Waveform -->
-    <g transform="translate(480, 152)" fill="#F59E0B">
-      <rect x="0" y="15" width="5" height="10" rx="2.5" class="bar-a" />
-      <rect x="10" y="8" width="5" height="24" rx="2.5" class="bar-b" />
-      <rect x="20" y="13" width="5" height="14" rx="2.5" class="bar-c" />
-      <rect x="30" y="8" width="5" height="24" rx="2.5" class="bar-a" />
-      <rect x="40" y="15" width="5" height="10" rx="2.5" class="bar-b" />
-      <rect x="50" y="13" width="5" height="14" rx="2.5" class="bar-c" />
+    <!-- Title & Editorial Copy -->
+    <g transform="translate(36, 94)">
+      <text x="0" y="0" fill="#FFFFFF" font-size="28" font-weight="700" letter-spacing="-0.8" class="display">
+        UniStack — Campus Operating System
+      </text>
+      <text x="0" y="32" fill="#A1A1AA" font-size="14.5" font-weight="400" class="display">
+        A multi-tenant ecosystem uniting student utilities and club operations into
+      </text>
+      <text x="0" y="54" fill="#A1A1AA" font-size="14.5" font-weight="400" class="display">
+        one cohesive platform—powering cab sharing, event discovery, QR passes,
+      </text>
+      <text x="0" y="76" fill="#A1A1AA" font-size="14.5" font-weight="400" class="display">
+        academic resources, club onboarding, dynamic forms, and org management.
+      </text>
     </g>
 
-    <!-- Tech Pills -->
-    <g transform="translate(28, 162)" class="mono" font-size="11" font-weight="600">
-      <rect x="0" y="0" width="84" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="42" y="17" text-anchor="middle" fill="#FBBF24">Electron</text>
+    <!-- Mini Architectural Module Cards at Bottom of Hero Bento -->
+    <g class="float-ui" transform="translate(36, 206)">
+      <!-- Module 1 -->
+      <rect x="0" y="0" width="196" height="68" rx="14" fill="#0D0E12" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+      <text x="16" y="25" fill="#38BDF8" font-size="10" font-weight="600" letter-spacing="1.2" class="mono">01 / MOBILITY &amp; EVENTS</text>
+      <text x="16" y="47" fill="#E4E4E7" font-size="12.5" font-weight="500" class="display">Cab Pools &amp; QR Passes</text>
 
-      <rect x="94" y="0" width="84" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="136" y="17" text-anchor="middle" fill="#FBBF24">Three.js</text>
+      <!-- Module 2 -->
+      <rect x="212" y="0" width="204" height="68" rx="14" fill="#0D0E12" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+      <text x="228" y="25" fill="#A855F7" font-size="10" font-weight="600" letter-spacing="1.2" class="mono">02 / CLUB OPERATIONS</text>
+      <text x="228" y="47" fill="#E4E4E7" font-size="12.5" font-weight="500" class="display">Onboarding &amp; Org Suite</text>
 
-      <rect x="188" y="0" width="102" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="239" y="17" text-anchor="middle" fill="#FBBF24">Voice &amp; TTS</text>
-
-      <rect x="300" y="0" width="114" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="357" y="17" text-anchor="middle" fill="#FBBF24">Hermes Agent</text>
+      <!-- Module 3 -->
+      <rect x="432" y="0" width="194" height="68" rx="14" fill="#0D0E12" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+      <text x="448" y="25" fill="#10B981" font-size="10" font-weight="600" letter-spacing="1.2" class="mono">03 / ACADEMICS</text>
+      <text x="448" y="47" fill="#E4E4E7" font-size="12.5" font-weight="500" class="display">Calendars &amp; Resources</text>
     </g>
   </g>
 
-  <!-- ==================== CARD 3: UNISTACK AI & PYPPT_NEO ==================== -->
-  <g class="c3" transform="translate(0, 232)">
-    <rect x="4" y="6" width="580" height="210" rx="16" fill="url(#cardBg)" stroke="url(#purpleBorder)" stroke-width="1.6" />
-    <circle cx="510" cy="50" r="55" fill="#A855F7" opacity="0.09" filter="url(#cardGlow)" />
+  <!-- ==================== 2. TOP-RIGHT BENTO (COL-SPAN-5): VERITY DESKTOP ==================== -->
+  <g transform="translate(714, 0)">
+    <!-- Outer Bezel Shell -->
+    <rect x="1" y="1" width="484" height="310" rx="26" fill="#050507" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+    <!-- Inner Core -->
+    <rect x="8" y="8" width="470" height="296" rx="20" fill="url(#bentoCore)" stroke="url(#rimLight)" stroke-width="1" />
+    <rect x="8" y="8" width="470" height="296" rx="20" fill="url(#amberSpot)" />
+    <line x1="48" y1="8.5" x2="320" y2="8.5" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="1" />
 
-    <!-- Header Pill -->
-    <rect x="28" y="26" width="150" height="24" rx="12" fill="#3B0764" stroke="#A855F7" stroke-width="1" />
-    <circle cx="42" cy="38" r="4" fill="#C084FC">
-      <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite" />
-    </circle>
-    <text x="54" y="42" fill="#E9D5FF" font-size="10.5" font-weight="700" class="mono">AI AUTOMATION</text>
-    <text x="415" y="42" fill="#C084FC" font-size="11.5" font-weight="600" class="mono">Voice + Deck Gen</text>
+    <!-- Eyebrow Header -->
+    <g transform="translate(34, 34)">
+      <rect x="0" y="0" width="154" height="24" rx="12" fill="#141210" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1" />
+      <circle cx="14" cy="12" r="3.5" fill="#F59E0B" class="live-dot" />
+      <text x="26" y="16" fill="#E4E4E7" font-size="10" font-weight="600" letter-spacing="1.4" class="mono">OPEN SOURCE · 3D</text>
 
-    <!-- Title & Desc -->
-    <text x="28" y="82" fill="#F8FAFC" font-size="22" font-weight="800" class="sans">UniStack AI &amp; Presentation Architect</text>
-    <text x="28" y="108" fill="#94A3B8" font-size="13.5" class="sans">Vapi voice calling workflows with live transcripts + FastAPI engine</text>
-    <text x="28" y="128" fill="#94A3B8" font-size="13.5" class="sans">(pyppt_neo) converting structured JSON schemas into editable PPTX decks.</text>
-
-    <!-- Animated Voice Wave Indicator -->
-    <g transform="translate(480, 152)" fill="#A855F7">
-      <rect x="0" y="13" width="5" height="14" rx="2.5" class="bar-c" />
-      <rect x="10" y="15" width="5" height="10" rx="2.5" class="bar-a" />
-      <rect x="20" y="8" width="5" height="24" rx="2.5" class="bar-b" />
-      <rect x="30" y="13" width="5" height="14" rx="2.5" class="bar-c" />
-      <rect x="40" y="8" width="5" height="24" rx="2.5" class="bar-a" />
-      <rect x="50" y="15" width="5" height="10" rx="2.5" class="bar-b" />
+      <!-- Animated Voice/Expression Equalizer -->
+      <g transform="translate(382, 2)" fill="#F59E0B">
+        <rect x="0" y="2" width="3" height="18" rx="1.5" class="eq1" />
+        <rect x="6" y="2" width="3" height="18" rx="1.5" class="eq2" />
+        <rect x="12" y="2" width="3" height="18" rx="1.5" class="eq3" />
+        <rect x="18" y="2" width="3" height="18" rx="1.5" class="eq1" />
+        <rect x="24" y="2" width="3" height="18" rx="1.5" class="eq2" />
+      </g>
     </g>
 
-    <!-- Tech Pills -->
-    <g transform="translate(28, 162)" class="mono" font-size="11" font-weight="600">
-      <rect x="0" y="0" width="78" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="39" y="17" text-anchor="middle" fill="#C084FC">FastAPI</text>
-
-      <rect x="88" y="0" width="84" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="130" y="17" text-anchor="middle" fill="#C084FC">Vapi AI</text>
-
-      <rect x="182" y="0" width="88" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="226" y="17" text-anchor="middle" fill="#C084FC">Supabase</text>
-
-      <rect x="280" y="0" width="110" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="335" y="17" text-anchor="middle" fill="#C084FC">JSON → PPTX</text>
-    </g>
-  </g>
-
-  <!-- ==================== CARD 4: BRIAN & DEV INFRASTRUCTURE ==================== -->
-  <g class="c4" transform="translate(612, 232)">
-    <rect x="4" y="6" width="580" height="210" rx="16" fill="url(#cardBg)" stroke="url(#greenBorder)" stroke-width="1.6" />
-    <circle cx="510" cy="50" r="55" fill="#10B981" opacity="0.09" filter="url(#cardGlow)" />
-
-    <!-- Header Pill -->
-    <rect x="28" y="26" width="166" height="24" rx="12" fill="#064E3B" stroke="#10B981" stroke-width="1" />
-    <circle cx="42" cy="38" r="4" fill="#34D399">
-      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
-    </circle>
-    <text x="54" y="42" fill="#A7F3D0" font-size="10.5" font-weight="700" class="mono">DEVOPS &amp; COMMERCE</text>
-    <text x="420" y="42" fill="#34D399" font-size="11.5" font-weight="600" class="mono">Systems Suite</text>
-
-    <!-- Title & Desc -->
-    <text x="28" y="82" fill="#F8FAFC" font-size="22" font-weight="800" class="sans">BRIAN Docker Plane · Ticktin · GrubGo</text>
-    <text x="28" y="108" fill="#94A3B8" font-size="13.5" class="sans">Self-hosted Docker container orchestration dashboard (BRIAN), high-scale</text>
-    <text x="28" y="128" fill="#94A3B8" font-size="13.5" class="sans">event ticketing &amp; checkout (Ticktin), and restaurant ops (GrubGo).</text>
-
-    <!-- Animated Container Status Dots -->
-    <g transform="translate(475, 162)">
-      <rect x="0" y="0" width="18" height="18" rx="4" fill="#064E3B" stroke="#10B981" stroke-width="1.2" />
-      <rect x="24" y="0" width="18" height="18" rx="4" fill="#064E3B" stroke="#10B981" stroke-width="1.2" />
-      <rect x="48" y="0" width="18" height="18" rx="4" fill="#064E3B" stroke="#38BDF8" stroke-width="1.2">
-        <animate attributeName="opacity" values="1;0.35;1" dur="2s" repeatCount="indefinite" />
-      </rect>
+    <!-- Title & Copy -->
+    <g transform="translate(34, 94)">
+      <text x="0" y="0" fill="#FFFFFF" font-size="25" font-weight="700" letter-spacing="-0.7" class="display">
+        Verity Desktop Companion
+      </text>
+      <text x="0" y="32" fill="#A1A1AA" font-size="14" font-weight="400" class="display">
+        An expressive 3D desktop avatar for AI conversations,
+      </text>
+      <text x="0" y="54" fill="#A1A1AA" font-size="14" font-weight="400" class="display">
+        voice synthesis, and real-time agent telemetry with a
+      </text>
+      <text x="0" y="76" fill="#A1A1AA" font-size="14" font-weight="400" class="display">
+        built-in motion studio and Hermes Gateway client.
+      </text>
     </g>
 
-    <!-- Tech Pills -->
-    <g transform="translate(28, 162)" class="mono" font-size="11" font-weight="600">
-      <rect x="0" y="0" width="96" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="48" y="17" text-anchor="middle" fill="#34D399">Docker SDK</text>
-
-      <rect x="106" y="0" width="98" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="155" y="17" text-anchor="middle" fill="#34D399">Payload CMS</text>
-
-      <rect x="214" y="0" width="78" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="253" y="17" text-anchor="middle" fill="#34D399">Next.js</text>
-
-      <rect x="302" y="0" width="94" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
-      <text x="349" y="17" text-anchor="middle" fill="#34D399">GEDIT-AI</text>
+    <!-- Bottom Spec Bar -->
+    <g transform="translate(34, 212)">
+      <rect x="0" y="0" width="416" height="62" rx="14" fill="#0B0B0E" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1" />
+      <text x="20" y="25" fill="#71717A" font-size="10" font-weight="600" letter-spacing="1.3" class="mono">RUNTIME ARCHITECTURE</text>
+      <text x="20" y="45" fill="#E4E4E7" font-size="12.5" font-weight="500" class="mono">Electron · Three.js · 700+ Facial States</text>
     </g>
   </g>
 
-  <!-- ==================== BOTTOM BAR: MORE IN THE LAB ==================== -->
-  <g transform="translate(4, 466)">
-    <rect x="0" y="0" width="1188" height="98" rx="16" fill="#080C17" stroke="#1E293B" stroke-width="1.5" />
-    <line x1="0" y1="0" x2="1188" y2="0" stroke="url(#cyanBorder)" stroke-width="1.5" />
+  <!-- ==================== 3. BOTTOM-LEFT BENTO (COL-SPAN-4): UNISTACK AI & PYPPT_NEO ==================== -->
+  <g transform="translate(0, 328)">
+    <rect x="1" y="1" width="388" height="248" rx="24" fill="#050507" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+    <rect x="7" y="7" width="376" height="236" rx="18" fill="url(#bentoCore)" stroke="url(#rimLight)" stroke-width="1" />
 
-    <text x="32" y="34" fill="#38BDF8" font-size="12" font-weight="700" letter-spacing="1.8" class="mono">
-      🧪 MORE SYSTEMS IN THE LAB // PUBLIC &amp; PRIVATE R&amp;D
-    </text>
+    <g transform="translate(30, 32)">
+      <text x="0" y="12" fill="#A855F7" font-size="10" font-weight="600" letter-spacing="1.6" class="mono">
+        VOICE AI &amp; DOCUMENT ENGINE
+      </text>
+      <text x="0" y="46" fill="#FFFFFF" font-size="21" font-weight="700" letter-spacing="-0.5" class="display">
+        UniStack AI &amp; pyppt_neo
+      </text>
+      <text x="0" y="74" fill="#A1A1AA" font-size="13.5" class="display">
+        Vapi-powered autonomous calling workflows with
+      </text>
+      <text x="0" y="94" fill="#A1A1AA" font-size="13.5" class="display">
+        live transcripts, paired with a FastAPI microservice
+      </text>
+      <text x="0" y="114" fill="#A1A1AA" font-size="13.5" class="display">
+        compiling JSON schemas into editable PPTX decks.
+      </text>
 
-    <!-- 4 Mini Highlights -->
-    <g transform="translate(32, 50)" class="sans" font-size="13">
-      <!-- Item 1 -->
-      <circle cx="6" cy="12" r="3.5" fill="#38BDF8" />
-      <text x="18" y="16" fill="#F8FAFC" font-weight="700">GEDIT-AI:</text>
-      <text x="86" y="16" fill="#94A3B8">Streaming AI code assistant inside Gedit</text>
+      <rect x="0" y="142" width="328" height="38" rx="10" fill="#0B0B0E" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1" />
+      <text x="16" y="165" fill="#A1A1AA" font-size="11.5" class="mono">FastAPI · Vapi AI · Supabase · Pydantic</text>
+    </g>
+  </g>
 
-      <!-- Item 2 -->
-      <circle cx="356" cy="12" r="3.5" fill="#A855F7" />
-      <text x="368" y="16" fill="#F8FAFC" font-weight="700">Voltis:</text>
-      <text x="415" y="16" fill="#94A3B8">TypeScript product &amp; UI system</text>
+  <!-- ==================== 4. BOTTOM-MIDDLE BENTO (COL-SPAN-4): TICKTIN & GRUBGO ==================== -->
+  <g transform="translate(405, 328)">
+    <rect x="1" y="1" width="388" height="248" rx="24" fill="#050507" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+    <rect x="7" y="7" width="376" height="236" rx="18" fill="url(#bentoCore)" stroke="url(#rimLight)" stroke-width="1" />
 
-      <!-- Item 3 -->
-      <circle cx="635" cy="12" r="3.5" fill="#F59E0B" />
-      <text x="647" y="16" fill="#F8FAFC" font-weight="700">Data Center Tycoon:</text>
-      <text x="782" y="16" fill="#94A3B8">Infra simulation game</text>
+    <g transform="translate(30, 32)">
+      <text x="0" y="12" fill="#38BDF8" font-size="10" font-weight="600" letter-spacing="1.6" class="mono">
+        HIGH-THROUGHPUT COMMERCE
+      </text>
+      <text x="0" y="46" fill="#FFFFFF" font-size="21" font-weight="700" letter-spacing="-0.5" class="display">
+        Ticktin &amp; GrubGo Suites
+      </text>
+      <text x="0" y="74" fill="#A1A1AA" font-size="13.5" class="display">
+        BookMyShow-scale event ticketing &amp; organizer
+      </text>
+      <text x="0" y="94" fill="#A1A1AA" font-size="13.5" class="display">
+        analytics (Ticktin), plus full-stack restaurant
+      </text>
+      <text x="0" y="114" fill="#A1A1AA" font-size="13.5" class="display">
+        ordering and kitchen dispatch planes (GrubGo).
+      </text>
 
-      <!-- Item 4 -->
-      <circle cx="942" cy="12" r="3.5" fill="#10B981" />
-      <text x="954" y="16" fill="#F8FAFC" font-weight="700">Obsidian-Brain:</text>
-      <text x="1058" y="16" fill="#94A3B8">Knowledge graph</text>
+      <rect x="0" y="142" width="328" height="38" rx="10" fill="#0B0B0E" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1" />
+      <text x="16" y="165" fill="#A1A1AA" font-size="11.5" class="mono">Next.js · Payload CMS · Checkout Flows</text>
+    </g>
+  </g>
+
+  <!-- ==================== 5. BOTTOM-RIGHT BENTO (COL-SPAN-4): BRIAN & GEDIT-AI ==================== -->
+  <g transform="translate(810, 328)">
+    <rect x="1" y="1" width="388" height="248" rx="24" fill="#050507" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+    <rect x="7" y="7" width="376" height="236" rx="18" fill="url(#bentoCore)" stroke="url(#rimLight)" stroke-width="1" />
+
+    <g transform="translate(30, 32)">
+      <text x="0" y="12" fill="#10B981" font-size="10" font-weight="600" letter-spacing="1.6" class="mono">
+        DEV INFRASTRUCTURE &amp; IDE TOOLS
+      </text>
+      <text x="0" y="46" fill="#FFFFFF" font-size="21" font-weight="700" letter-spacing="-0.5" class="display">
+        BRIAN Docker &amp; GEDIT-AI
+      </text>
+      <text x="0" y="74" fill="#A1A1AA" font-size="13.5" class="display">
+        Modular control plane for self-hosted Docker
+      </text>
+      <text x="0" y="94" fill="#A1A1AA" font-size="13.5" class="display">
+        containers (BRIAN), alongside a native Gedit IDE
+      </text>
+      <text x="0" y="114" fill="#A1A1AA" font-size="13.5" class="display">
+        plugin for streaming inline LLM code refactoring.
+      </text>
+
+      <rect x="0" y="142" width="328" height="38" rx="10" fill="#0B0B0E" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1" />
+      <text x="16" y="165" fill="#A1A1AA" font-size="11.5" class="mono">Docker SDK · React · FastAPI · GTK</text>
     </g>
   </g>
 </svg>

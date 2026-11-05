@@ -1,75 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 58" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 54" width="100%" height="100%">
   <defs>
-    <linearGradient id="marqueeBg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#050814" />
-      <stop offset="50%" stop-color="#0F172A" />
-      <stop offset="100%" stop-color="#050814" />
+    <linearGradient id="stripBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#070709" />
+      <stop offset="50%" stop-color="#0D0D11" />
+      <stop offset="100%" stop-color="#070709" />
     </linearGradient>
 
-    <linearGradient id="edgeFade" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#050814" stop-opacity="1" />
-      <stop offset="8%" stop-color="#050814" stop-opacity="0" />
-      <stop offset="92%" stop-color="#050814" stop-opacity="0" />
-      <stop offset="100%" stop-color="#050814" stop-opacity="1" />
+    <linearGradient id="fadeMask" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#050507" stop-opacity="1" />
+      <stop offset="10%" stop-color="#050507" stop-opacity="0" />
+      <stop offset="90%" stop-color="#050507" stop-opacity="0" />
+      <stop offset="100%" stop-color="#050507" stop-opacity="1" />
     </linearGradient>
 
-    <linearGradient id="topLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.1" />
-      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.7" />
-      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.1" />
+    <linearGradient id="topSpecular" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
     </linearGradient>
   </defs>
 
   <style>
-    .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; font-size: 13px; font-weight: 600; }
-    @keyframes scrollTicker {
-      0% { transform: translateX(0px); }
-      100% { transform: translateX(-1380px); }
+    .mono {
+      font-family: 'SF Mono', 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 1.6px;
     }
-    .ticker-track {
-      animation: scrollTicker 28s linear infinite;
+    @keyframes glide {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-1440px); }
+    }
+    .track {
+      animation: glide 36s linear infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .track { animation: none !important; }
     }
   </style>
 
-  <!-- Container -->
-  <rect width="1200" height="58" rx="12" fill="url(#marqueeBg)" stroke="#1E293B" stroke-width="1.2" />
-  <line x1="80" y1="1" x2="1120" y2="1" stroke="url(#topLineGrad)" stroke-width="1.5" />
+  <!-- Double-Bezel Outer Pill -->
+  <rect x="1" y="1" width="1198" height="52" rx="26" fill="#050507" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1" />
+  <!-- Inner Core -->
+  <rect x="5" y="5" width="1190" height="44" rx="22" fill="url(#stripBg)" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1" />
+  <line x1="160" y1="5.5" x2="1040" y2="5.5" stroke="url(#topSpecular)" stroke-width="1" />
 
-  <!-- Scrolling Track (Duplicated for seamless loop at 1380px period) -->
-  <g class="ticker-track" transform="translate(0, 34)">
-    <!-- Set 1 -->
-    <g transform="translate(30, 0)">
-      <text x="0" y="0" fill="#38BDF8" class="mono">⚡ NEXT.JS &amp; REACT</text>
-      <circle cx="170" cy="-4" r="3" fill="#475569" />
-      <text x="195" y="0" fill="#A855F7" class="mono">🐍 PYTHON &amp; FASTAPI</text>
-      <circle cx="375" cy="-4" r="3" fill="#475569" />
-      <text x="400" y="0" fill="#10B981" class="mono">🎙️ VAPI VOICE AGENTS</text>
-      <circle cx="590" cy="-4" r="3" fill="#475569" />
-      <text x="615" y="0" fill="#F59E0B" class="mono">🧊 THREE.JS &amp; ELECTRON</text>
-      <circle cx="820" cy="-4" r="3" fill="#475569" />
-      <text x="845" y="0" fill="#EC4899" class="mono">📦 PAYLOAD CMS &amp; SUPABASE</text>
-      <circle cx="1075" cy="-4" r="3" fill="#475569" />
-      <text x="1100" y="0" fill="#60A5FA" class="mono">🐳 DOCKER SDK &amp; SELF-HOSTING</text>
-      <circle cx="1355" cy="-4" r="3" fill="#475569" />
+  <!-- Continuous Gliding Track (1440px period) -->
+  <g class="track" transform="translate(0, 31)">
+    <!-- Segment A -->
+    <g transform="translate(40, 0)">
+      <text x="0" y="0" fill="#E4E4E7" class="mono">NEXT.JS 15</text>
+      <circle cx="118" cy="-4" r="2" fill="#38BDF8" />
+      <text x="142" y="0" fill="#A1A1AA" class="mono">TYPESCRIPT</text>
+      <circle cx="264" cy="-4" r="2" fill="#52525B" />
+      <text x="288" y="0" fill="#E4E4E7" class="mono">PYTHON &amp; FASTAPI</text>
+      <circle cx="464" cy="-4" r="2" fill="#10B981" />
+      <text x="488" y="0" fill="#A1A1AA" class="mono">THREE.JS &amp; WEBGL</text>
+      <circle cx="662" cy="-4" r="2" fill="#52525B" />
+      <text x="686" y="0" fill="#E4E4E7" class="mono">ELECTRON DESKTOP</text>
+      <circle cx="868" cy="-4" r="2" fill="#F59E0B" />
+      <text x="892" y="0" fill="#A1A1AA" class="mono">VAPI VOICE AGENTS</text>
+      <circle cx="1078" cy="-4" r="2" fill="#52525B" />
+      <text x="1102" y="0" fill="#E4E4E7" class="mono">SUPABASE &amp; PAYLOAD</text>
+      <circle cx="1298" cy="-4" r="2" fill="#38BDF8" />
+      <text x="1322" y="0" fill="#A1A1AA" class="mono">DOCKER SDK</text>
+      <circle cx="1426" cy="-4" r="2" fill="#52525B" />
     </g>
 
-    <!-- Set 2 (Offset by 1380px) -->
-    <g transform="translate(1410, 0)">
-      <text x="0" y="0" fill="#38BDF8" class="mono">⚡ NEXT.JS &amp; REACT</text>
-      <circle cx="170" cy="-4" r="3" fill="#475569" />
-      <text x="195" y="0" fill="#A855F7" class="mono">🐍 PYTHON &amp; FASTAPI</text>
-      <circle cx="375" cy="-4" r="3" fill="#475569" />
-      <text x="400" y="0" fill="#10B981" class="mono">🎙️ VAPI VOICE AGENTS</text>
-      <circle cx="590" cy="-4" r="3" fill="#475569" />
-      <text x="615" y="0" fill="#F59E0B" class="mono">🧊 THREE.JS &amp; ELECTRON</text>
-      <circle cx="820" cy="-4" r="3" fill="#475569" />
-      <text x="845" y="0" fill="#EC4899" class="mono">📦 PAYLOAD CMS &amp; SUPABASE</text>
-      <circle cx="1075" cy="-4" r="3" fill="#475569" />
-      <text x="1100" y="0" fill="#60A5FA" class="mono">🐳 DOCKER SDK &amp; SELF-HOSTING</text>
-      <circle cx="1355" cy="-4" r="3" fill="#475569" />
+    <!-- Segment B (+1440px) -->
+    <g transform="translate(1480, 0)">
+      <text x="0" y="0" fill="#E4E4E7" class="mono">NEXT.JS 15</text>
+      <circle cx="118" cy="-4" r="2" fill="#38BDF8" />
+      <text x="142" y="0" fill="#A1A1AA" class="mono">TYPESCRIPT</text>
+      <circle cx="264" cy="-4" r="2" fill="#52525B" />
+      <text x="288" y="0" fill="#E4E4E7" class="mono">PYTHON &amp; FASTAPI</text>
+      <circle cx="464" cy="-4" r="2" fill="#10B981" />
+      <text x="488" y="0" fill="#A1A1AA" class="mono">THREE.JS &amp; WEBGL</text>
+      <circle cx="662" cy="-4" r="2" fill="#52525B" />
+      <text x="686" y="0" fill="#E4E4E7" class="mono">ELECTRON DESKTOP</text>
+      <circle cx="868" cy="-4" r="2" fill="#F59E0B" />
+      <text x="892" y="0" fill="#A1A1AA" class="mono">VAPI VOICE AGENTS</text>
+      <circle cx="1078" cy="-4" r="2" fill="#52525B" />
+      <text x="1102" y="0" fill="#E4E4E7" class="mono">SUPABASE &amp; PAYLOAD</text>
+      <circle cx="1298" cy="-4" r="2" fill="#38BDF8" />
+      <text x="1322" y="0" fill="#A1A1AA" class="mono">DOCKER SDK</text>
+      <circle cx="1426" cy="-4" r="2" fill="#52525B" />
     </g>
   </g>
 
-  <!-- Edge Fade Overlay -->
-  <rect width="1200" height="58" rx="12" fill="url(#edgeFade)" pointer-events="none" />
+  <!-- Soft Edge Vignette -->
+  <rect x="5" y="5" width="1190" height="44" rx="22" fill="url(#fadeMask)" pointer-events="none" />
 </svg>
