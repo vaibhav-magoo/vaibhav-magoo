@@ -9,7 +9,7 @@ I build full-stack products across AI, developer tools, student platforms, and e
 
 My largest product: a campus platform bringing student utilities and club operations together. It includes cab sharing, club updates, event discovery and QR passes, academic resources, calendars, club onboarding, event hosting, forms, and organization management.
 
-### Tictin — event ticket booking and management
+### Ticktin — event ticket booking and management
 An event ticketing platform in the BookMyShow category. The code includes event discovery, event detail and checkout flows, payment completion, and organizer tools for publishing events and tracking tickets.
 
 ### GrubGo — food ordering and restaurant management
