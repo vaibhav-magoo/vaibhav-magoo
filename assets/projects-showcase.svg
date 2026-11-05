@@ -1,0 +1,290 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1120" />
+      <stop offset="100%" stop-color="#070B14" />
+    </linearGradient>
+
+    <linearGradient id="cyanBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#1E293B" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#1E293B" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="purpleBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#1E293B" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="greenBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#1E293B" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.85" />
+    </linearGradient>
+
+    <filter id="cardGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20" result="blur" />
+    </filter>
+  </defs>
+
+  <style>
+    .sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+
+    @keyframes pulseBar1 {
+      0%, 100% { height: 10px; y: 15px; }
+      50% { height: 28px; y: 6px; }
+    }
+    @keyframes pulseBar2 {
+      0%, 100% { height: 24px; y: 8px; }
+      50% { height: 8px; y: 16px; }
+    }
+    @keyframes pulseBar3 {
+      0%, 100% { height: 14px; y: 13px; }
+      50% { height: 32px; y: 4px; }
+    }
+    @keyframes floatCard1 {
+      0%, 100% { transform: translate(0px, 0px); }
+      50% { transform: translate(0px, -4px); }
+    }
+    @keyframes floatCard2 {
+      0%, 100% { transform: translate(612px, 0px); }
+      50% { transform: translate(612px, -4px); }
+    }
+    @keyframes floatCard3 {
+      0%, 100% { transform: translate(0px, 232px); }
+      50% { transform: translate(0px, 228px); }
+    }
+    @keyframes floatCard4 {
+      0%, 100% { transform: translate(612px, 232px); }
+      50% { transform: translate(612px, 228px); }
+    }
+    @keyframes dataFlow {
+      to { stroke-dashoffset: -120; }
+    }
+
+    .c1 { animation: floatCard1 6s ease-in-out infinite; }
+    .c2 { animation: floatCard2 6.5s ease-in-out infinite; }
+    .c3 { animation: floatCard3 7s ease-in-out infinite; }
+    .c4 { animation: floatCard4 5.8s ease-in-out infinite; }
+
+    .bar-a { animation: pulseBar1 1.2s ease-in-out infinite; }
+    .bar-b { animation: pulseBar2 0.9s ease-in-out infinite; }
+    .bar-c { animation: pulseBar3 1.4s ease-in-out infinite; }
+    .stream-line { stroke-dasharray: 6 10; animation: dataFlow 4s linear infinite; }
+  </style>
+
+  <!-- ==================== CARD 1: UNISTACK ==================== -->
+  <g class="c1" transform="translate(0, 0)">
+    <rect x="4" y="6" width="580" height="210" rx="16" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.6" />
+    <circle cx="510" cy="50" r="55" fill="#06B6D4" opacity="0.09" filter="url(#cardGlow)" />
+
+    <!-- Header Pill -->
+    <rect x="28" y="26" width="136" height="24" rx="12" fill="#083344" stroke="#06B6D4" stroke-width="1" />
+    <circle cx="42" cy="38" r="4" fill="#22D3EE">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+    <text x="54" y="42" fill="#67E8F9" font-size="10.5" font-weight="700" class="mono">LIVE PLATFORM</text>
+    <text x="455" y="42" fill="#38BDF8" font-size="11.5" font-weight="600" class="mono">unistack.cc ↗</text>
+
+    <!-- Title & Desc -->
+    <text x="28" y="82" fill="#F8FAFC" font-size="22" font-weight="800" class="sans">UniStack — Campus Operating System</text>
+    <text x="28" y="108" fill="#94A3B8" font-size="13.5" class="sans">Unified ecosystem for student utilities &amp; club operations: cab sharing,</text>
+    <text x="28" y="128" fill="#94A3B8" font-size="13.5" class="sans">event discovery, QR passes, academic calendars, forms &amp; org management.</text>
+
+    <!-- Animated Node Graph Indicator -->
+    <g transform="translate(465, 145)">
+      <line x1="0" y1="20" x2="40" y2="8" stroke="#38BDF8" stroke-width="1.5" class="stream-line" />
+      <line x1="40" y1="8" x2="82" y2="24" stroke="#38BDF8" stroke-width="1.5" class="stream-line" />
+      <circle cx="0" cy="20" r="4" fill="#06B6D4" />
+      <circle cx="40" cy="8" r="5" fill="#38BDF8" />
+      <circle cx="82" cy="24" r="4" fill="#60A5FA" />
+    </g>
+
+    <!-- Tech Pills -->
+    <g transform="translate(28, 162)" class="mono" font-size="11" font-weight="600">
+      <rect x="0" y="0" width="84" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="42" y="17" text-anchor="middle" fill="#38BDF8">Full-Stack</text>
+
+      <rect x="94" y="0" width="90" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="139" y="17" text-anchor="middle" fill="#38BDF8">QR Passes</text>
+
+      <rect x="194" y="0" width="106" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="247" y="17" text-anchor="middle" fill="#38BDF8">Multi-Tenant</text>
+
+      <rect x="310" y="0" width="96" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="358" y="17" text-anchor="middle" fill="#38BDF8">Real-Time</text>
+    </g>
+  </g>
+
+  <!-- ==================== CARD 2: VERITY DESKTOP ==================== -->
+  <g class="c2" transform="translate(612, 0)">
+    <rect x="4" y="6" width="580" height="210" rx="16" fill="url(#cardBg)" stroke="url(#goldBorder)" stroke-width="1.6" />
+    <circle cx="510" cy="50" r="55" fill="#F59E0B" opacity="0.09" filter="url(#cardGlow)" />
+
+    <!-- Header Pill -->
+    <rect x="28" y="26" width="154" height="24" rx="12" fill="#451A03" stroke="#F59E0B" stroke-width="1" />
+    <circle cx="42" cy="38" r="4" fill="#FBBF24">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="54" y="42" fill="#FDE68A" font-size="10.5" font-weight="700" class="mono">3D AI COMPANION</text>
+    <text x="415" y="42" fill="#FBBF24" font-size="11.5" font-weight="600" class="mono">700+ Expressions</text>
+
+    <!-- Title & Desc -->
+    <text x="28" y="82" fill="#F8FAFC" font-size="22" font-weight="800" class="sans">Verity Desktop — Expressive 3D Avatar</text>
+    <text x="28" y="108" fill="#94A3B8" font-size="13.5" class="sans">Living desktop companion for AI voice, conversations &amp; agent telemetry.</text>
+    <text x="28" y="128" fill="#94A3B8" font-size="13.5" class="sans">Features a hands-on 3D motion studio &amp; Hermes Gateway integration.</text>
+
+    <!-- Animated Emotion/Audio Waveform -->
+    <g transform="translate(480, 152)" fill="#F59E0B">
+      <rect x="0" y="15" width="5" height="10" rx="2.5" class="bar-a" />
+      <rect x="10" y="8" width="5" height="24" rx="2.5" class="bar-b" />
+      <rect x="20" y="13" width="5" height="14" rx="2.5" class="bar-c" />
+      <rect x="30" y="8" width="5" height="24" rx="2.5" class="bar-a" />
+      <rect x="40" y="15" width="5" height="10" rx="2.5" class="bar-b" />
+      <rect x="50" y="13" width="5" height="14" rx="2.5" class="bar-c" />
+    </g>
+
+    <!-- Tech Pills -->
+    <g transform="translate(28, 162)" class="mono" font-size="11" font-weight="600">
+      <rect x="0" y="0" width="84" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="42" y="17" text-anchor="middle" fill="#FBBF24">Electron</text>
+
+      <rect x="94" y="0" width="84" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="136" y="17" text-anchor="middle" fill="#FBBF24">Three.js</text>
+
+      <rect x="188" y="0" width="102" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="239" y="17" text-anchor="middle" fill="#FBBF24">Voice &amp; TTS</text>
+
+      <rect x="300" y="0" width="114" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="357" y="17" text-anchor="middle" fill="#FBBF24">Hermes Agent</text>
+    </g>
+  </g>
+
+  <!-- ==================== CARD 3: UNISTACK AI & PYPPT_NEO ==================== -->
+  <g class="c3" transform="translate(0, 232)">
+    <rect x="4" y="6" width="580" height="210" rx="16" fill="url(#cardBg)" stroke="url(#purpleBorder)" stroke-width="1.6" />
+    <circle cx="510" cy="50" r="55" fill="#A855F7" opacity="0.09" filter="url(#cardGlow)" />
+
+    <!-- Header Pill -->
+    <rect x="28" y="26" width="150" height="24" rx="12" fill="#3B0764" stroke="#A855F7" stroke-width="1" />
+    <circle cx="42" cy="38" r="4" fill="#C084FC">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite" />
+    </circle>
+    <text x="54" y="42" fill="#E9D5FF" font-size="10.5" font-weight="700" class="mono">AI AUTOMATION</text>
+    <text x="415" y="42" fill="#C084FC" font-size="11.5" font-weight="600" class="mono">Voice + Deck Gen</text>
+
+    <!-- Title & Desc -->
+    <text x="28" y="82" fill="#F8FAFC" font-size="22" font-weight="800" class="sans">UniStack AI &amp; Presentation Architect</text>
+    <text x="28" y="108" fill="#94A3B8" font-size="13.5" class="sans">Vapi voice calling workflows with live transcripts + FastAPI engine</text>
+    <text x="28" y="128" fill="#94A3B8" font-size="13.5" class="sans">(pyppt_neo) converting structured JSON schemas into editable PPTX decks.</text>
+
+    <!-- Animated Voice Wave Indicator -->
+    <g transform="translate(480, 152)" fill="#A855F7">
+      <rect x="0" y="13" width="5" height="14" rx="2.5" class="bar-c" />
+      <rect x="10" y="15" width="5" height="10" rx="2.5" class="bar-a" />
+      <rect x="20" y="8" width="5" height="24" rx="2.5" class="bar-b" />
+      <rect x="30" y="13" width="5" height="14" rx="2.5" class="bar-c" />
+      <rect x="40" y="8" width="5" height="24" rx="2.5" class="bar-a" />
+      <rect x="50" y="15" width="5" height="10" rx="2.5" class="bar-b" />
+    </g>
+
+    <!-- Tech Pills -->
+    <g transform="translate(28, 162)" class="mono" font-size="11" font-weight="600">
+      <rect x="0" y="0" width="78" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="39" y="17" text-anchor="middle" fill="#C084FC">FastAPI</text>
+
+      <rect x="88" y="0" width="84" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="130" y="17" text-anchor="middle" fill="#C084FC">Vapi AI</text>
+
+      <rect x="182" y="0" width="88" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="226" y="17" text-anchor="middle" fill="#C084FC">Supabase</text>
+
+      <rect x="280" y="0" width="110" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="335" y="17" text-anchor="middle" fill="#C084FC">JSON → PPTX</text>
+    </g>
+  </g>
+
+  <!-- ==================== CARD 4: BRIAN & DEV INFRASTRUCTURE ==================== -->
+  <g class="c4" transform="translate(612, 232)">
+    <rect x="4" y="6" width="580" height="210" rx="16" fill="url(#cardBg)" stroke="url(#greenBorder)" stroke-width="1.6" />
+    <circle cx="510" cy="50" r="55" fill="#10B981" opacity="0.09" filter="url(#cardGlow)" />
+
+    <!-- Header Pill -->
+    <rect x="28" y="26" width="166" height="24" rx="12" fill="#064E3B" stroke="#10B981" stroke-width="1" />
+    <circle cx="42" cy="38" r="4" fill="#34D399">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="54" y="42" fill="#A7F3D0" font-size="10.5" font-weight="700" class="mono">DEVOPS &amp; COMMERCE</text>
+    <text x="420" y="42" fill="#34D399" font-size="11.5" font-weight="600" class="mono">Systems Suite</text>
+
+    <!-- Title & Desc -->
+    <text x="28" y="82" fill="#F8FAFC" font-size="22" font-weight="800" class="sans">BRIAN Docker Plane · Ticktin · GrubGo</text>
+    <text x="28" y="108" fill="#94A3B8" font-size="13.5" class="sans">Self-hosted Docker container orchestration dashboard (BRIAN), high-scale</text>
+    <text x="28" y="128" fill="#94A3B8" font-size="13.5" class="sans">event ticketing &amp; checkout (Ticktin), and restaurant ops (GrubGo).</text>
+
+    <!-- Animated Container Status Dots -->
+    <g transform="translate(475, 162)">
+      <rect x="0" y="0" width="18" height="18" rx="4" fill="#064E3B" stroke="#10B981" stroke-width="1.2" />
+      <rect x="24" y="0" width="18" height="18" rx="4" fill="#064E3B" stroke="#10B981" stroke-width="1.2" />
+      <rect x="48" y="0" width="18" height="18" rx="4" fill="#064E3B" stroke="#38BDF8" stroke-width="1.2">
+        <animate attributeName="opacity" values="1;0.35;1" dur="2s" repeatCount="indefinite" />
+      </rect>
+    </g>
+
+    <!-- Tech Pills -->
+    <g transform="translate(28, 162)" class="mono" font-size="11" font-weight="600">
+      <rect x="0" y="0" width="96" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="48" y="17" text-anchor="middle" fill="#34D399">Docker SDK</text>
+
+      <rect x="106" y="0" width="98" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="155" y="17" text-anchor="middle" fill="#34D399">Payload CMS</text>
+
+      <rect x="214" y="0" width="78" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="253" y="17" text-anchor="middle" fill="#34D399">Next.js</text>
+
+      <rect x="302" y="0" width="94" height="26" rx="6" fill="#0F172A" stroke="#1E293B" />
+      <text x="349" y="17" text-anchor="middle" fill="#34D399">GEDIT-AI</text>
+    </g>
+  </g>
+
+  <!-- ==================== BOTTOM BAR: MORE IN THE LAB ==================== -->
+  <g transform="translate(4, 466)">
+    <rect x="0" y="0" width="1188" height="98" rx="16" fill="#080C17" stroke="#1E293B" stroke-width="1.5" />
+    <line x1="0" y1="0" x2="1188" y2="0" stroke="url(#cyanBorder)" stroke-width="1.5" />
+
+    <text x="32" y="34" fill="#38BDF8" font-size="12" font-weight="700" letter-spacing="1.8" class="mono">
+      🧪 MORE SYSTEMS IN THE LAB // PUBLIC &amp; PRIVATE R&amp;D
+    </text>
+
+    <!-- 4 Mini Highlights -->
+    <g transform="translate(32, 50)" class="sans" font-size="13">
+      <!-- Item 1 -->
+      <circle cx="6" cy="12" r="3.5" fill="#38BDF8" />
+      <text x="18" y="16" fill="#F8FAFC" font-weight="700">GEDIT-AI:</text>
+      <text x="86" y="16" fill="#94A3B8">Streaming AI code assistant inside Gedit</text>
+
+      <!-- Item 2 -->
+      <circle cx="356" cy="12" r="3.5" fill="#A855F7" />
+      <text x="368" y="16" fill="#F8FAFC" font-weight="700">Voltis:</text>
+      <text x="415" y="16" fill="#94A3B8">TypeScript product &amp; UI system</text>
+
+      <!-- Item 3 -->
+      <circle cx="635" cy="12" r="3.5" fill="#F59E0B" />
+      <text x="647" y="16" fill="#F8FAFC" font-weight="700">Data Center Tycoon:</text>
+      <text x="782" y="16" fill="#94A3B8">Infra simulation game</text>
+
+      <!-- Item 4 -->
+      <circle cx="942" cy="12" r="3.5" fill="#10B981" />
+      <text x="954" y="16" fill="#F8FAFC" font-weight="700">Obsidian-Brain:</text>
+      <text x="1058" y="16" fill="#94A3B8">Knowledge graph</text>
+    </g>
+  </g>
+</svg>

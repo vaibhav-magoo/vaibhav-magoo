@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 58" width="100%" height="100%">
+  <defs>
+    <linearGradient id="marqueeBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#050814" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#050814" />
+    </linearGradient>
+
+    <linearGradient id="edgeFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#050814" stop-opacity="1" />
+      <stop offset="8%" stop-color="#050814" stop-opacity="0" />
+      <stop offset="92%" stop-color="#050814" stop-opacity="0" />
+      <stop offset="100%" stop-color="#050814" stop-opacity="1" />
+    </linearGradient>
+
+    <linearGradient id="topLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; font-size: 13px; font-weight: 600; }
+    @keyframes scrollTicker {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-1380px); }
+    }
+    .ticker-track {
+      animation: scrollTicker 28s linear infinite;
+    }
+  </style>
+
+  <!-- Container -->
+  <rect width="1200" height="58" rx="12" fill="url(#marqueeBg)" stroke="#1E293B" stroke-width="1.2" />
+  <line x1="80" y1="1" x2="1120" y2="1" stroke="url(#topLineGrad)" stroke-width="1.5" />
+
+  <!-- Scrolling Track (Duplicated for seamless loop at 1380px period) -->
+  <g class="ticker-track" transform="translate(0, 34)">
+    <!-- Set 1 -->
+    <g transform="translate(30, 0)">
+      <text x="0" y="0" fill="#38BDF8" class="mono">⚡ NEXT.JS &amp; REACT</text>
+      <circle cx="170" cy="-4" r="3" fill="#475569" />
+      <text x="195" y="0" fill="#A855F7" class="mono">🐍 PYTHON &amp; FASTAPI</text>
+      <circle cx="375" cy="-4" r="3" fill="#475569" />
+      <text x="400" y="0" fill="#10B981" class="mono">🎙️ VAPI VOICE AGENTS</text>
+      <circle cx="590" cy="-4" r="3" fill="#475569" />
+      <text x="615" y="0" fill="#F59E0B" class="mono">🧊 THREE.JS &amp; ELECTRON</text>
+      <circle cx="820" cy="-4" r="3" fill="#475569" />
+      <text x="845" y="0" fill="#EC4899" class="mono">📦 PAYLOAD CMS &amp; SUPABASE</text>
+      <circle cx="1075" cy="-4" r="3" fill="#475569" />
+      <text x="1100" y="0" fill="#60A5FA" class="mono">🐳 DOCKER SDK &amp; SELF-HOSTING</text>
+      <circle cx="1355" cy="-4" r="3" fill="#475569" />
+    </g>
+
+    <!-- Set 2 (Offset by 1380px) -->
+    <g transform="translate(1410, 0)">
+      <text x="0" y="0" fill="#38BDF8" class="mono">⚡ NEXT.JS &amp; REACT</text>
+      <circle cx="170" cy="-4" r="3" fill="#475569" />
+      <text x="195" y="0" fill="#A855F7" class="mono">🐍 PYTHON &amp; FASTAPI</text>
+      <circle cx="375" cy="-4" r="3" fill="#475569" />
+      <text x="400" y="0" fill="#10B981" class="mono">🎙️ VAPI VOICE AGENTS</text>
+      <circle cx="590" cy="-4" r="3" fill="#475569" />
+      <text x="615" y="0" fill="#F59E0B" class="mono">🧊 THREE.JS &amp; ELECTRON</text>
+      <circle cx="820" cy="-4" r="3" fill="#475569" />
+      <text x="845" y="0" fill="#EC4899" class="mono">📦 PAYLOAD CMS &amp; SUPABASE</text>
+      <circle cx="1075" cy="-4" r="3" fill="#475569" />
+      <text x="1100" y="0" fill="#60A5FA" class="mono">🐳 DOCKER SDK &amp; SELF-HOSTING</text>
+      <circle cx="1355" cy="-4" r="3" fill="#475569" />
+    </g>
+  </g>
+
+  <!-- Edge Fade Overlay -->
+  <rect width="1200" height="58" rx="12" fill="url(#edgeFade)" pointer-events="none" />
+</svg>

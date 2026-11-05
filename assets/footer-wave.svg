@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.22" />
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.22" />
+    </linearGradient>
+
+    <linearGradient id="fGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.16" />
+      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.18" />
+    </linearGradient>
+
+    <linearGradient id="lineGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#050814" stop-opacity="0" />
+      <stop offset="25%" stop-color="#38BDF8" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#A855F7" stop-opacity="1" />
+      <stop offset="75%" stop-color="#10B981" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#050814" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+    @keyframes waveA {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(-60px); }
+    }
+    @keyframes waveB {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(55px); }
+    }
+    .w1 { animation: waveA 8s ease-in-out infinite; }
+    .w2 { animation: waveB 11s ease-in-out infinite; }
+  </style>
+
+  <rect width="1200" height="120" rx="14" fill="#050814" stroke="#1E293B" stroke-width="1.2" />
+
+  <g class="w1">
+    <path d="M -100 65 Q 200 25, 500 65 T 1100 60 T 1350 65 L 1350 120 L -100 120 Z" fill="url(#fGrad1)" />
+  </g>
+  <g class="w2">
+    <path d="M -100 80 Q 260 40, 620 80 T 1180 75 T 1350 82 L 1350 120 L -100 120 Z" fill="url(#fGrad2)" />
+  </g>
+
+  <line x1="60" y1="1" x2="1140" y2="1" stroke="url(#lineGlow)" stroke-width="2" />
+
+  <text x="600" y="54" text-anchor="middle" fill="#F8FAFC" font-size="14" font-weight="700" letter-spacing="2" class="mono">
+    ⚡ DESIGNED &amp; ENGINEERED TO SHIP // VAIBHAV MAGOO
+  </text>
+  <text x="600" y="80" text-anchor="middle" fill="#94A3B8" font-size="12" class="mono">
+    Always open to discussing system architecture, product engineering &amp; high-impact collaborations.
+  </text>
+</svg>

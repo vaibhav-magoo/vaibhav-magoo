@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814" />
+      <stop offset="45%" stop-color="#0B1120" />
+      <stop offset="100%" stop-color="#090D16" />
+    </linearGradient>
+
+    <!-- Text Gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#E2E8F0" />
+      <stop offset="70%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#A855F7" />
+      <animate attributeName="x1" values="0%;20%;0%" dur="8s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="100%;80%;100%" dur="8s" repeatCount="indefinite" />
+    </linearGradient>
+
+    <!-- Accent Gradient Cyan-Purple -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="50%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="35" result="blur" />
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.7" stroke-opacity="0.55" />
+      <circle cx="40" cy="40" r="1" fill="#38BDF8" opacity="0.25" />
+    </pattern>
+
+    <!-- Wave Path -->
+    <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.18" />
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.18" />
+    </linearGradient>
+
+    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.12" />
+      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.20" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.15" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, monospace; }
+    .font-sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(8px) rotate(6deg); }
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; r: 4.5px; }
+      50% { opacity: 0.35; r: 6.5px; }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -240; }
+    }
+    @keyframes orbitSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes orbitSpinReverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes scanline {
+      0% { transform: translateY(-340px); opacity: 0; }
+      30% { opacity: 0.12; }
+      70% { opacity: 0.12; }
+      100% { transform: translateY(340px); opacity: 0; }
+    }
+    @keyframes waveShift {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(-45px); }
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .floating-card { animation: floatSlow 6s ease-in-out infinite; }
+    .floating-badge { animation: floatReverse 5s ease-in-out infinite; }
+    .circuit-line { stroke-dasharray: 12 18; animation: dashFlow 7s linear infinite; }
+    .orbit-cw { transform-origin: 990px 165px; animation: orbitSpin 26s linear infinite; }
+    .orbit-ccw { transform-origin: 990px 165px; animation: orbitSpinReverse 18s linear infinite; }
+    .scan-bar { animation: scanline 8s linear infinite; }
+    .wave-anim { animation: waveShift 9s ease-in-out infinite; }
+    .cursor-blink { animation: blink 1.1s infinite; }
+  </style>
+
+  <!-- Base Rounded Container -->
+  <rect width="1200" height="340" rx="18" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="2" />
+
+  <!-- Subtle Grid Overlay -->
+  <rect width="1200" height="340" rx="18" fill="url(#grid)" />
+
+  <!-- Ambient Nebula Orbs -->
+  <circle cx="220" cy="90" r="130" fill="#0EA5E9" opacity="0.12" filter="url(#softGlow)">
+    <animate attributeName="cx" values="220;280;220" dur="12s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="90;130;90" dur="12s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="960" cy="170" r="150" fill="#8B5CF6" opacity="0.15" filter="url(#softGlow)">
+    <animate attributeName="cx" values="960;910;960" dur="10s" repeatCount="indefinite" />
+    <animate attributeName="r" values="150;175;150" dur="10s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="620" cy="280" r="110" fill="#10B981" opacity="0.08" filter="url(#softGlow)" />
+
+  <!-- Animated Data Circuit Lines -->
+  <g fill="none" stroke-width="1.5">
+    <path d="M 0 260 L 180 260 L 220 220 L 520 220" stroke="#0EA5E9" stroke-opacity="0.2" />
+    <path d="M 0 260 L 180 260 L 220 220 L 520 220" stroke="#38BDF8" stroke-opacity="0.7" class="circuit-line" />
+    
+    <path d="M 650 60 L 790 60 L 830 100 L 1200 100" stroke="#8B5CF6" stroke-opacity="0.2" />
+    <path d="M 650 60 L 790 60 L 830 100 L 1200 100" stroke="#C084FC" stroke-opacity="0.7" class="circuit-line" />
+  </g>
+
+  <!-- Flowing Bottom Waves -->
+  <g class="wave-anim">
+    <path d="M -60 295 Q 180 260, 420 295 T 900 290 T 1280 295 L 1280 340 L -60 340 Z" fill="url(#waveGrad1)" />
+    <path d="M -60 310 Q 260 275, 540 310 T 1050 300 T 1280 312 L 1280 340 L -60 340 Z" fill="url(#waveGrad2)" />
+  </g>
+
+  <!-- Scanline Effect -->
+  <rect x="0" y="0" width="1200" height="40" fill="url(#accentGrad)" opacity="0.06" class="scan-bar" />
+
+  <!-- Top Status Pill -->
+  <g transform="translate(64, 42)">
+    <rect x="0" y="0" width="335" height="32" rx="16" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+    <circle cx="18" cy="16" r="4.5" fill="#10B981">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="18" cy="16" r="8" fill="none" stroke="#10B981" stroke-width="1" opacity="0.5">
+      <animate attributeName="r" values="4.5;11" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="34" y="20.5" fill="#94A3B8" font-size="12" font-weight="600" letter-spacing="1.2" class="font-mono">
+      SYSTEM.ONLINE // BUILDER MODE: <tspan fill="#10B981">ACTIVE</tspan>
+    </text>
+  </g>
+
+  <!-- Main Heading & Identity -->
+  <g transform="translate(64, 134)">
+    <text x="0" y="0" font-size="56" font-weight="800" letter-spacing="-1" fill="url(#titleGrad)" class="font-sans">
+      Vaibhav Magoo
+    </text>
+
+    <!-- Subtitle with accent line -->
+    <rect x="2" y="20" width="84" height="4" rx="2" fill="url(#accentGrad)" />
+    <text x="102" y="27" fill="#38BDF8" font-size="14.5" font-weight="600" letter-spacing="2.5" class="font-mono">
+      FULL-STACK PRODUCT ENGINEER &amp; AI SYSTEMS ARCHITECT
+    </text>
+
+    <!-- Tagline -->
+    <text x="2" y="66" fill="#CBD5E1" font-size="17" font-weight="400" class="font-sans">
+      Shipping high-leverage AI agents, campus-scale platforms, 3D desktop companions &amp; developer tools.
+    </text>
+
+    <!-- Live Terminal Command Line -->
+    <g transform="translate(2, 92)">
+      <rect x="0" y="0" width="670" height="40" rx="8" fill="#090D16" fill-opacity="0.85" stroke="#1E293B" stroke-width="1.2" />
+      <circle cx="18" cy="20" r="4.5" fill="#EF4444" opacity="0.8" />
+      <circle cx="32" cy="20" r="4.5" fill="#F59E0B" opacity="0.8" />
+      <circle cx="46" cy="20" r="4.5" fill="#10B981" opacity="0.8" />
+      <text x="68" y="24.5" fill="#64748B" font-size="13" class="font-mono">vaibhav@core:~$</text>
+      <text x="192" y="24.5" fill="#E2E8F0" font-size="13" class="font-mono">
+        deploy --stack <tspan fill="#38BDF8">"Next.js · FastAPI · Three.js · AI Agents · Docker"</tspan>
+      </text>
+      <rect x="646" y="12" width="7" height="16" fill="#38BDF8" class="cursor-blink" />
+    </g>
+  </g>
+
+  <!-- Right Side: Futuristic Animated Orbital Core & Floating HUD Cards -->
+  <g>
+    <!-- Outer Rotating Ring -->
+    <g class="orbit-cw">
+      <circle cx="990" cy="165" r="112" fill="none" stroke="#1E293B" stroke-width="1.5" stroke-dasharray="8 6" />
+      <circle cx="990" cy="165" r="112" fill="none" stroke="url(#accentGrad)" stroke-width="2" stroke-dasharray="60 180" />
+      <circle cx="990" cy="53" r="5" fill="#38BDF8" filter="url(#glow)" />
+      <circle cx="990" cy="277" r="5" fill="#EC4899" filter="url(#glow)" />
+    </g>
+
+    <!-- Inner Counter-Rotating Ring -->
+    <g class="orbit-ccw">
+      <circle cx="990" cy="165" r="78" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 8" />
+      <circle cx="990" cy="165" r="78" fill="none" stroke="#A855F7" stroke-width="2.5" stroke-dasharray="45 150" />
+      <circle cx="1068" cy="165" r="4.5" fill="#A855F7" filter="url(#glow)" />
+      <circle cx="912" cy="165" r="4.5" fill="#10B981" filter="url(#glow)" />
+    </g>
+
+    <!-- Core Hexagon & Monogram -->
+    <g class="floating-card">
+      <polygon points="990,115 1033,140 1033,190 990,215 947,190 947,140" fill="#0F172A" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
+      <text x="990" y="173" text-anchor="middle" fill="#FFFFFF" font-size="24" font-weight="800" letter-spacing="1.5" class="font-mono">
+        &lt;VM/&gt;
+      </text>
+    </g>
+
+    <!-- Floating Telemetry Badges around Core -->
+    <g class="floating-badge" transform="translate(830, 52)">
+      <rect x="0" y="0" width="118" height="28" rx="6" fill="#0F172A" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.6" />
+      <text x="59" y="18" text-anchor="middle" fill="#38BDF8" font-size="11" font-weight="600" class="font-mono">⚡ UNISTACK.CC</text>
+    </g>
+
+    <g class="floating-card" transform="translate(1045, 72)">
+      <rect x="0" y="0" width="116" height="28" rx="6" fill="#0F172A" stroke="#A855F7" stroke-width="1" stroke-opacity="0.6" />
+      <text x="58" y="18" text-anchor="middle" fill="#C084FC" font-size="11" font-weight="600" class="font-mono">🤖 AI AGENTS</text>
+    </g>
+
+    <g class="floating-badge" transform="translate(822, 246)">
+      <rect x="0" y="0" width="122" height="28" rx="6" fill="#0F172A" stroke="#10B981" stroke-width="1" stroke-opacity="0.6" />
+      <text x="61" y="18" text-anchor="middle" fill="#34D399" font-size="11" font-weight="600" class="font-mono">🐳 SELF-HOSTED</text>
+    </g>
+
+    <g class="floating-card" transform="translate(1040, 236)">
+      <rect x="0" y="0" width="118" height="28" rx="6" fill="#0F172A" stroke="#F43F5E" stroke-width="1" stroke-opacity="0.6" />
+      <text x="59" y="18" text-anchor="middle" fill="#FB7185" font-size="11" font-weight="600" class="font-mono">✨ 3D / WEBGL</text>
+    </g>
+  </g>
+</svg>
